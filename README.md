@@ -112,5 +112,55 @@ Por que o navegador mostra conteúdo, mas o nslookup não?
 Por que o FTP exige autenticação explícita e permissões diferentes entre usuários?
 O que o usuário enxerga como “uma ação simples” que, na verdade, depende de vários serviços em cadeia?
 
+
+
+## 4. Parte 4: Verificando o funcionamento do DNS-Server
+Escolha um host da esquerda e ping todos os demais hosts da sua topologia. Para isso faça:
+* Abra o **Command Prompt** da aba **Desktop** e digite:
+* ping `nome do pc` e aguarde o resultado. Note que você não colocou o IP explicitamente e sim, o nome do computador;
+* Esse artifício só é possível porque existe o servidor DNS com o nome de cada PC e o seu respectivo IP;
+* Você deve simular o caminho do pacote para ver isso acontecer ponto-a-ponto para aprender como é na prática;
+* Caso você receba uma mensagem de erro dizendo **request could not find host dns-server. Please check the name and try again.** significa que a sua tabela DNS não possui o respectivo host e IP cadastrado. Confira a tabela novamente e adicione o que estiver faltando.
+
+## 5. Parte 5: Verificando o funcionamento do FTP-Server
+Essa parte é muito louca. Você vai salvar um arquivo `.txt` (a partir de qualquer host) no Multi-Server já que você o configurou para suportar o FTP.
+
+### A. Criando um arquivo texto qualquer:
+* Vá no host FTP-Client, mas você poderia ir em qualquer host da sua topologia e fazer o mesmo; 
+* Vá na aba **Desktop**;
+* Clique em **Text Editor**;
+* Digite um texto de 250 palavras. Pede o GPTO criar um texto doido com 250 palavras para você. Copie e cole no editor de texto, clique em **File** e salve com o nome `meutexto.txt`;
+
+### B. Configurando o Multi-Server como FTP:
+* Clique no host **Multi-Server**;
+* Vá na aba **Services**;
+* Vá no menu vertical **FTP**;
+* No campo **User Name** crie um SUPER usuário e uma senha em **Password**. Anote isso aí no canto para não esquecer. Porque SUPER usuário? Porque ele vai ter acesso à tudo no FTP.
+* Marque as 5 caixinhas: **Write**, **Read**, **Delete**, **Rename** e **List**;
+* Clique em **Add**;
+* Agora crie um MINI usuário e com outra senha em **Password**. Novamente, anota isso aí para não esquecer. Este **MINI** vai ter restrições de acesso ao FTP.
+* Marque as caixinhas: **Read** e **List**;
+* Clique em **Add**.
+
+<img src="https://github.com/agodoi/m09ec-semana08a/blob/main/assets/FTP.png" width="600">
+
+### C. Salvando um arquivo .txt no Multi-Server
+
+* Volte no FTP-Client;
+* Abra o **Command-Prompt**;
+* Digite `ftp multi-server`;
+* Entre com as credenciais do SUPER usuário que você criou;
+* Digite `put meutexto.txt` [ENTER];
+* E o arquivo será salvo no servidor de arquivos Multi-Server;
+* Ainda na mesma tela do **Command-Prompt** do FTP-Client, digite o comando `dir` e veja o seu arquivo listado no Multi-Server;
+* Agora digite `quit`para fechar a conexão do SUPER usuário;
+* Digite `ftp multi-server`;
+* Entre com as credenciais do MINI usuário que você criou;
+* Digite `put meutexto.txt` [ENTER];
+* Vai dar acesso negado, certo? Isso é normal porque você não habilitou o modo **Write** para este usuário.
+
+
+
+
 ## Responder o Kahoot
 
