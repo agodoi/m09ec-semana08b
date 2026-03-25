@@ -169,13 +169,13 @@ Esse pacote representa:
 
 1.6) Abra esse PDU que saiu do host **Email-Client** clicando no envelope. Vai abrir uma pequena tela **PDU INFORMATION AT DEVICE: xxx**. Que no seu caso, deve ser o **Switch1**;
 
-1.7) Na aba **OSI Model**, responda:
+1.7) Na aba **OSI Model**, responda neste [Google Forms](https://forms.gle/ahpmpaBV3gJ4W5FJ6)
 
 1.7.1) Destination?
 
 1.7.2) Na coluna Out Layers, o que está na CAMADA 7?
 
-1.7.2) Na CAMADA 4, está UDP ou TCP? Qual porta de destino e qual porta de origem? Você enxerga a porta de destino 53? O que isso significa? Faça uma rápida pesquisa.
+1.7.3) Na CAMADA 4, está UDP ou TCP? Qual porta de destino e qual porta de origem? Você enxerga a porta de destino 53? O que isso significa? Faça uma rápida pesquisa.
 
 1.8) Na aba OUTBOUND PDU DETAILS, responda:
 
@@ -201,7 +201,7 @@ Esse pacote representa:
 
 1.9.3) **DESAFIO MASTER BLASTER:** descubra a lógica do campo SEQ NUMBER do campo ICMP. Se você conseguir entender está see tornando um ninja em redes.
 
-1.9.4) Qual o valor do sub-campo TL
+1.9.4) Qual o valor do sub-campo TL?
 
 
 
@@ -279,6 +279,7 @@ Conceitos trabalhados:
 * Digite `put meutexto.txt` [ENTER];
 * Vai dar acesso negado, certo? Isso é normal porque você não habilitou o modo **Write** para este usuário.
 
+#### 4.4) Faça análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos. Neste ensaio, alguns sub-campos não vão aparecer porque o serviço mudou. **Remarque o protocolo FTP, TCP e UDP no Edit Filters**.
 
 ## (5) Perguntas Finais
 
