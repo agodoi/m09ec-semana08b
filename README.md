@@ -76,40 +76,26 @@ Colocar um print aqui e explicar todos os campos
 
 
 
-## Fazer o tráfego da rede para cada protocolo e analisar o PDU
-
-Atividade 1 — Acessar o servidor pelo nome e não pelo IP
-Objetivo:
-mostrar que, para o usuário, o nome é mais amigável que o endereço numérico.
-
-Passos:
-no HTTP-Client, abra o Web Browser;
-em vez de digitar o IP do Multi-Server, digite apenas o nome cadastrado no DNS;
-observe se a página abre;
-depois vá para o modo de simulação e veja que antes da comunicação HTTP houve consulta DNS.
-
-Conceito trabalhado:
-o DNS não entrega a página; ele apenas resolve o nome;
-o HTTP não resolve nomes; ele entrega conteúdo;
-a aplicação ao usuário parece uma coisa só, mas a rede utiliza mais de um protocolo.
+## (2) Executando outros Ensaios e Análise da PDU
 
 Atividade 2 — Editar a página web do servidor
-Objetivo:
-mostrar que HTTP entrega conteúdo publicado por um servidor.
+Objetivo: mostrar que HTTP entrega conteúdo publicado por um servidor.
 
-Passos:
-clique no Multi-Server;
-vá em Services, depois HTTP;
-edite a página inicial do servidor com um texto personalizado, por exemplo:
-“Servidor web da turma X — Semana 08b”
-salve;
-volte ao HTTP-Client e atualize a página.
+**Passos:**
+2.1) Clique no Multi-Server;
+2.2) Vá em Services, depois HTTP;
+2.3) Edite a página inicial do servidor **index.html** clicando sobre a palavra **edit** com um texto personalizado. Você pode pedir ajuda ao GPeTo pra criar um HTML simples e personalizado de acordo com o seu prompt.
+2.4) Salve. Vai dar um pau dizendo que já existe, foda-s...;
+2.5) Clique em **File Manage** para voltar à tela anterior;
+2.6) Vá no host **HTTP-Client** e atualize a página;
+2.7) Confirma que sua página está sendo carregada em qualquer outro host.
+2.8) Agora, é a sua vez de fazer uma análise da PDU nessa comunicação com o servidor. Volte no 
 
 Conceito trabalhado:
-HTTP é um protocolo de entrega de conteúdo;
-o servidor hospeda recursos;
-o navegador é um cliente de aplicação;
-a camada de aplicação não é apenas troca de pacotes, mas entrega de informação útil ao usuário.
+* HTTP é um protocolo de entrega de conteúdo;
+* O servidor hospeda recursos;
+* O navegador é um cliente de aplicação;
+* A camada de aplicação não é apenas troca de pacotes, mas entrega de informação útil ao usuário.
 
 Atividade 3 — Diferenciar resolução de nomes e acesso ao serviço
 Objetivo:
