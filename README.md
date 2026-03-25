@@ -94,7 +94,7 @@ Objetivo: mostrar que HTTP entrega conteúdo publicado por um servidor.
 
 2.7) Confirma que sua página está sendo carregada em qualquer outro host.
 
-2.8) Agora, é a sua vez de fazer uma análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos.
+2.8) Agora, é a sua vez de fazer uma análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos. **Mas antes, filtre marque o protocolo TCP UDP e HTTP no Edit Filters**.
 
 Conceito trabalhado:
 * HTTP é um protocolo de entrega de conteúdo;
@@ -110,7 +110,7 @@ Objetivo: aprofundar o papel da aplicação de correio eletrônico.
 
 3.2) Envie mensagem de email para o servidor de email;
 
-3.3) Faça análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos. Neste ensaio, alguns sub-campos não vão aparecer porque o serviço mudou. Mas você deve 
+3.3) Faça análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos. Neste ensaio, alguns sub-campos não vão aparecer porque o serviço mudou. **Remarque o protocolo SMTP e POP3 no Edit Filters**.
 
 
 epois faça o recebimento;
