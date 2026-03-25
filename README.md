@@ -31,12 +31,19 @@ Colocar um print aqui e explicar todos os campos
 **Objetivo:** Sua missão é abrir o **Commmand-Prompt** do **PC Email-Client**, digitar `ping PC2` e analisar o PDU em todos os saltos até obter o primeiro pacote ping **Reply from 192.168.0.131: bytes=32 time=10ms TTL=126**. Após isso, preencher um relatório respondendo as perguntas;
 
 1.1) Clica no botão **Simulation** para ativar a simulação passo-a-passo;
+
 1.2) Vá em **Edit Filters** desmarque todas as caixinhas, menos DNS e ICMP ((Internet Control Message Protocol). Este último suporta o comando `ping`;  
+
 1.3) Clica no host **Email-Client**, abra o seu Command-Prompt;
+
 1.4) Digite `ping pc2` e [ENTER]
+
 1.5) Minimiza o **Command-Prompt** e clica 1x no botão **avançar** ou **Alt+c** no teclado;
+
 1.6) Abra esse PDU que saiu do host **Email-Client** clicando no envelope. Vai abrir uma pequena tela **PDU INFORMATION AT DEVICE: xxx**. Que no seu caso, deve ser o **Switch1**;
+
 1.7) Na aba **OSI Model**, responda:
+
 1.7.1) 
 
 
