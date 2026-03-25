@@ -23,7 +23,8 @@
 
 ## Definição do Datagrama
 
-https://github.com/agodoi/m09ec-semana08b/blob/main/assets/datagrama.png
+<img src="https://github.com/agodoi/m09ec-semana08b/blob/main/assets/datagrama.png" width="500">
+
 
 ### VISÃO GERAL DO PACOTE
 
@@ -34,7 +35,7 @@ Você está vendo um pacote que passou pelo **Router2** contendo:
 * Camada 4 → TCP
 * É um tráfego **HTTP (porta 80)** sendo transportado.
 
-### 1. CAMADA ETHERNET (Camada 2): 
+### 1. CAMADA ETHERNET (Camada 2)
 
 * Aqui acontece algo MUITO importante didaticamente: O MAC muda a cada salto (roteador)
 
