@@ -1,12 +1,12 @@
 # Camada de Aplicação II - Aprofundamento
 
-##Objetivo da aula
+## Objetivos
 
 * Compreender como os protocolos da camada de aplicação funcionam de forma integrada em uma rede cliente-servidor;
 * Analisar nomes, serviços, autenticação, conteúdo e mensagens que trafegam;
 * Analisar e compreender como esses PDUs são entregues ao usuário final.
 
-## Ao final da aula, vocês devem ser capazes de:
+## Ao final da aula, vocês serão capazes de:
 
 * Explicar o papel de DNS, HTTP, FTP e Email dentro da camada de aplicação;
 * Diferenciar nome de host, endereço IP, porta e serviço;
@@ -39,8 +39,6 @@ Você está vendo um pacote que passou pelo **Router2** contendo:
 **MAC muda**
 **IP NÃO muda**
 
-Isso é essencial para os alunos entenderem:
-
 * Ethernet = entrega local (salto a salto)
 * IP = entrega fim a fim
 
@@ -62,7 +60,6 @@ Isso é essencial para os alunos entenderem:
 ```
 
 #### TYPE: 0x0800: Indica que o payload é IPv4
-
 
 ### 2. CAMADA IP (Camada 3)
 
@@ -103,9 +100,7 @@ TTL: 254
 ```text
 192.168.0.2
 ```
-* Esse NÃO muda durante o caminho
-
----
+* Esse NÃO muda durante o caminho.
 
 ### 3. CAMADA TCP (Camada 4)
 
@@ -126,7 +121,6 @@ Traduzindo:
 | ACK  | 1     | Confirmação      |
 | RST  | 1     | Reset de conexão |
 
-
 Interpretação:
 
 * Esse pacote está dizendo:
@@ -145,7 +139,6 @@ Interpretação:
 
 #### PADDING: 0 (Ajuste de tamanho do pacote)
 
-
 ## INTERPRETAÇÃO COMPLETA DO PACOTE
 
 Esse pacote representa:
@@ -154,34 +147,8 @@ Esse pacote representa:
 * Respondendo a um cliente
 * Mas enviando um **RESET (RST)**
 * e bloqueando o fluxo (WINDOW = 0)
-
-# 🔥 O QUE ISSO SIGNIFICA NA PRÁTICA?
-
-Possíveis causas no seu laboratório:
-
-* Serviço HTTP não está ativo corretamente
-* Porta não está aberta
-* Cliente tentou conexão inválida
+* **O QUE ISSO SIGNIFICA NA PRÁTICA?** Possíveis causas no seu laboratório:
 * Simulação iniciou no meio da comunicação
-
----
-
-# 🎯 INSIGHT DIDÁTICO (ESSENCIAL PRA SUA AULA)
-
-Esse print mostra 3 conceitos-chave:
-
-### 1. ✔ MAC muda a cada salto
-
-### 2. ✔ IP permanece fixo
-
-### 3. ✔ TTL controla o caminho
-
----
-
-# 💡 FRASE PERFEITA PARA SLIDE
-
-👉 “Roteadores trocam MAC, preservam IP e reduzem TTL”
-
 
 ## (1) Análise do PDU do PING DNS e ICMP
 
