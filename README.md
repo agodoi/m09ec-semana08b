@@ -207,7 +207,7 @@ Esse pacote representa:
 
 ## (2) Análise do PDU do Serviço Web
 
-Objetivo: mostrar que HTTP entrega conteúdo publicado por um servidor.
+**Objetivo:** mostrar que HTTP entrega conteúdo publicado por um servidor.
 
 2.1) Clique no Multi-Server;
 
@@ -225,7 +225,7 @@ Objetivo: mostrar que HTTP entrega conteúdo publicado por um servidor.
 
 2.8) Agora, é a sua vez de fazer uma análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos. **Mas antes, filtre marque o protocolo TCP UDP e HTTP no Edit Filters**.
 
-Conceito trabalhado:
+Conceitos trabalhados:
 * HTTP é um protocolo de entrega de conteúdo;
 * O servidor hospeda recursos;
 * O navegador é um cliente de aplicação;
@@ -233,7 +233,7 @@ Conceito trabalhado:
 
 ## (3) Análise do PDU do Serviço de Email
 
-Objetivo: aprofundar o papel da aplicação de correio eletrônico.
+**Objetivo:** aprofundar o papel da aplicação de correio eletrônico.
 
 3.1) Adotando os passos da aula anterior, configure a conta de email: [https://github.com/agodoi/m09ec-semana08a](https://github.com/agodoi/m09ec-semana08a)
 
@@ -241,60 +241,17 @@ Objetivo: aprofundar o papel da aplicação de correio eletrônico.
 
 3.3) Faça análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos. Neste ensaio, alguns sub-campos não vão aparecer porque o serviço mudou. **Remarque o protocolo SMTP e POP3 no Edit Filters**.
 
+## (4) Análise da PDU Servido FTP com foco em autenticação e permissão
 
-epois faça o recebimento;
-analise no modo simulação o envio e a chegada.
+**Objetivo:** mostrar que aplicação também envolve controle de acesso.
 
-Conceito trabalhado:
-o aluno normalmente pensa que “email é uma coisa só”, mas a aplicação envolve funções distintas;
-envio e recebimento não são exatamente a mesma operação;
-há serviço no servidor, autenticação, armazenamento e consulta.
-
-Atividade 5 — FTP com foco em autenticação e permissão
-Objetivo:
-mostrar que aplicação também envolve controle de acesso.
-
-Passos:
-repita o acesso com SUPER e MINI usuário;
-faça o upload com SUPER;
-tente o mesmo com MINI;
-observe a diferença de comportamento.
-
-Conceito trabalhado:
-a camada de aplicação também implementa regras de uso;
-não é apenas comunicação, mas política de acesso;
-o protocolo entrega serviço, mas o servidor decide o que o usuário pode fazer.
-
-Perguntas conceituais fortes para conduzir a aula
-Você pode usar perguntas como estas durante a mediação:
-Quando o usuário digita um nome no navegador, qual serviço entra em ação antes do site abrir?
-Por que acessar um site por nome é mais confortável para humanos do que por IP?
-Se o DNS falhar, o servidor web necessariamente parou de funcionar?
-O que muda entre um serviço estar ativo e um serviço estar acessível para o usuário?
-Por que o navegador mostra conteúdo, mas o nslookup não?
-Por que o FTP exige autenticação explícita e permissões diferentes entre usuários?
-O que o usuário enxerga como “uma ação simples” que, na verdade, depende de vários serviços em cadeia?
-
-
-
-## 4. Parte 4: Verificando o funcionamento do DNS-Server
-Escolha um host da esquerda e ping todos os demais hosts da sua topologia. Para isso faça:
-* Abra o **Command Prompt** da aba **Desktop** e digite:
-* ping `nome do pc` e aguarde o resultado. Note que você não colocou o IP explicitamente e sim, o nome do computador;
-* Esse artifício só é possível porque existe o servidor DNS com o nome de cada PC e o seu respectivo IP;
-* Você deve simular o caminho do pacote para ver isso acontecer ponto-a-ponto para aprender como é na prática;
-* Caso você receba uma mensagem de erro dizendo **request could not find host dns-server. Please check the name and try again.** significa que a sua tabela DNS não possui o respectivo host e IP cadastrado. Confira a tabela novamente e adicione o que estiver faltando.
-
-## 5. Parte 5: Verificando o funcionamento do FTP-Server
-Essa parte é muito louca. Você vai salvar um arquivo `.txt` (a partir de qualquer host) no Multi-Server já que você o configurou para suportar o FTP.
-
-### A. Criando um arquivo texto qualquer:
+### 4.1 Criando um arquivo texto qualquer:
 * Vá no host FTP-Client, mas você poderia ir em qualquer host da sua topologia e fazer o mesmo; 
 * Vá na aba **Desktop**;
 * Clique em **Text Editor**;
 * Digite um texto de 250 palavras. Pede o GPTO criar um texto doido com 250 palavras para você. Copie e cole no editor de texto, clique em **File** e salve com o nome `meutexto.txt`;
 
-### B. Configurando o Multi-Server como FTP:
+### 4.2 Configurando o Multi-Server como FTP:
 * Clique no host **Multi-Server**;
 * Vá na aba **Services**;
 * Vá no menu vertical **FTP**;
@@ -307,7 +264,7 @@ Essa parte é muito louca. Você vai salvar um arquivo `.txt` (a partir de qualq
 
 <img src="https://github.com/agodoi/m09ec-semana08a/blob/main/assets/FTP.png" width="600">
 
-### C. Salvando um arquivo .txt no Multi-Server
+### 4.3 Salvando um arquivo .txt no Multi-Server
 
 * Volte no FTP-Client;
 * Abra o **Command-Prompt**;
@@ -323,7 +280,16 @@ Essa parte é muito louca. Você vai salvar um arquivo `.txt` (a partir de qualq
 * Vai dar acesso negado, certo? Isso é normal porque você não habilitou o modo **Write** para este usuário.
 
 
+## (5) Perguntas Finais
 
+5.1) Quando o usuário digita um nome no navegador, qual serviço entra em ação antes do site abrir? Faça sua verificação no Packet Tracer.
 
-## Responder o Kahoot
+5.2) Por que acessar um site por nome é mais confortável para humanos do que por IP?
 
+5.3) Se o DNS falhar, o servidor web necessariamente parou de funcionar?
+
+5.4) O que muda entre um serviço estar ativo e um serviço estar acessível para o usuário?
+
+5.5) Por que o navegador mostra conteúdo, mas o nslookup não?
+
+5.6) Por que o FTP exige autenticação explícita e permissões diferentes entre usuários?
