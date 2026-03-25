@@ -56,7 +56,7 @@ Colocar um print aqui e explicar todos os campos
 
 1.8.2) Qual é o DST IP?
 
-1.8.3) Olhando para o campo UDP, qual é o SOURCE PORT? Por que?
+1.8.3) Olhando para o campo UDP, qual é o SOURCE PORT? Por que? Deveria ser TCP e não UDP? Por que?
 
 1.8.4) Ainda no campo UDP, qual é o DESTIONAION PORT? Bate como alguma coisa que você viu nos itens anteriores?
 
@@ -76,20 +76,25 @@ Colocar um print aqui e explicar todos os campos
 
 
 
-## (2) Executando outros Ensaios e Análise da PDU
+## (2) Análise do PDU do Serviço Web
 
-Atividade 2 — Editar a página web do servidor
 Objetivo: mostrar que HTTP entrega conteúdo publicado por um servidor.
 
-**Passos:**
 2.1) Clique no Multi-Server;
+
 2.2) Vá em Services, depois HTTP;
+
 2.3) Edite a página inicial do servidor **index.html** clicando sobre a palavra **edit** com um texto personalizado. Você pode pedir ajuda ao GPeTo pra criar um HTML simples e personalizado de acordo com o seu prompt.
+
 2.4) Salve. Vai dar um pau dizendo que já existe, foda-s...;
+
 2.5) Clique em **File Manage** para voltar à tela anterior;
+
 2.6) Vá no host **HTTP-Client** e atualize a página;
+
 2.7) Confirma que sua página está sendo carregada em qualquer outro host.
-2.8) Agora, é a sua vez de fazer uma análise da PDU nessa comunicação com o servidor. Volte no 
+
+2.8) Agora, é a sua vez de fazer uma análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos.
 
 Conceito trabalhado:
 * HTTP é um protocolo de entrega de conteúdo;
@@ -97,31 +102,18 @@ Conceito trabalhado:
 * O navegador é um cliente de aplicação;
 * A camada de aplicação não é apenas troca de pacotes, mas entrega de informação útil ao usuário.
 
-Atividade 3 — Diferenciar resolução de nomes e acesso ao serviço
-Objetivo:
-evitar que o aluno misture DNS com HTTP.
+## (3) Análise do PDU do Serviço de Email
 
-Passos:
-no DNS-Client, rode nslookup Multi-Server;
-anote o IP retornado;
-no HTTP-Client, acesse o mesmo recurso pelo nome;
-depois acesse pelo IP;
-compare os resultados.
+Objetivo: aprofundar o papel da aplicação de correio eletrônico.
 
-Discussão:
-quando usamos nome, precisamos do DNS;
-quando usamos IP diretamente, o DNS pode ser dispensado;
-o serviço final continua sendo HTTP;
-isso ajuda o aluno a separar “descobrir onde está” de “consumir o serviço”.
+3.1) Adotando os passos da aula anterior, configure a conta de email: [https://github.com/agodoi/m09ec-semana08a](https://github.com/agodoi/m09ec-semana08a)
 
-Atividade 4 — Email além do envio
-Objetivo:
-aprofundar o papel da aplicação de correio eletrônico.
+3.2) Envie mensagem de email para o servidor de email;
 
-Passos:
-configure duas contas de e-mail em clientes distintos;
-envie mensagem de um para o outro;
-depois faça o recebimento;
+3.3) Faça análise da PDU nessa comunicação com o servidor. Volte no item (1) e faça a consulta de alguns mesmos sub-campos. Neste ensaio, alguns sub-campos não vão aparecer porque o serviço mudou. Mas você deve 
+
+
+epois faça o recebimento;
 analise no modo simulação o envio e a chegada.
 
 Conceito trabalhado:
