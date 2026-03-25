@@ -34,7 +34,9 @@ Você está vendo um pacote que passou pelo **Router2** contendo:
 * Camada 4 → TCP
 * É um tráfego **HTTP (porta 80)** sendo transportado.
 
-### 1. CAMADA ETHERNET (Camada 2): Aqui acontece algo MUITO importante didaticamente: O MAC muda a cada salto (roteador)
+### 1. CAMADA ETHERNET (Camada 2): 
+
+* Aqui acontece algo MUITO importante didaticamente: O MAC muda a cada salto (roteador)
 
 **MAC muda**
 **IP NÃO muda**
