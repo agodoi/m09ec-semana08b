@@ -26,7 +26,7 @@
 Colocar um print aqui e explicar todos os campos
 
 
-## (1) Análise do PDU do PING usando NOME (DNS) e não IP
+## (1) Análise do PDU do PING DNS e ICMP
 
 **Objetivo:** Sua missão é abrir o **Commmand-Prompt** do **PC Email-Client**, digitar `ping PC2` e analisar o PDU em todos os saltos até obter o primeiro pacote ping **Reply from 192.168.0.131: bytes=32 time=10ms TTL=126**. Após isso, preencher um relatório respondendo as perguntas;
 
@@ -65,6 +65,15 @@ Colocar um print aqui e explicar todos os campos
 1.8.6) No campo DNS Answers, o que está na varíavel NAME?
 
 1.8.7) Ainda no campo DNS Answer, o que está no subcampo IP? Bate com alguma coisa? Justifique.
+
+1.9) Agora rode a simulação até que 1 pacote ICMP saia da origem **PC Email-Client** e retorne para este host. Abra esse pacote (que deve ser de outra cor), vá no **INBOUD PDU DETAILS** e responda:
+
+1.9.1) No subcampo IP, qual é o SRC IP? Bate com o `ping pc2`
+
+1.9.2) No subcampo IP, qual é o DST IP? Faz sentido a resposta que você está vendo?
+
+1.9.3) **DESAFIO MASTER BLASTER:** descubra a lógica do campo SEQ NUMBER do campo ICMP. Se você conseguir entender está see tornando um ninja em redes.
+
 
 
 ## Fazer o tráfego da rede para cada protocolo e analisar o PDU
