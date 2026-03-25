@@ -23,7 +23,164 @@
 
 ## Definição do Datagrama
 
-Colocar um print aqui e explicar todos os campos
+https://github.com/agodoi/m09ec-semana08b/blob/main/assets/datagrama.png
+
+### VISÃO GERAL DO PACOTE
+
+Você está vendo um pacote que passou pelo **Router2** contendo:
+
+* Camada 2 → Ethernet
+* Camada 3 → IP
+* Camada 4 → TCP
+* É um tráfego **HTTP (porta 80)** sendo transportado.
+
+### 1. CAMADA ETHERNET (Camada 2): Aqui acontece algo MUITO importante didaticamente: O MAC muda a cada salto (roteador)
+
+**MAC muda**
+**IP NÃO muda**
+
+Isso é essencial para os alunos entenderem:
+
+* Ethernet = entrega local (salto a salto)
+* IP = entrega fim a fim
+
+#### PREAMBLE + SFD
+
+* Sincronização do quadro
+* Indica início da transmissão
+
+#### DEST ADDR: MAC de destino (próximo salto)
+
+```text
+000A.F384.E102
+```
+
+#### SRC ADDR: MAC do Router2 (quem está enviando agora)
+
+```text
+0001.6454.DD01
+```
+
+#### TYPE: 0x0800: Indica que o payload é IPv4
+
+
+### 2. CAMADA IP (Camada 3)
+
+#### VER: 4 (IPv4)
+
+#### IHL: 5 (Cabeçalho padrão (20 bytes)
+
+#### DSCP: 0x00 (Sem prioridade especial)
+
+#### TL: 20 (ou Total Length que é tamanho do pacote IP)
+
+#### ID: 0x0002 (identificador, usado em fragmentação)
+
+#### FLAGS: 0 (Sem fragmentação)
+
+#### FRAG OFFSET: 0 (Pacote inteiro)
+
+#### TTL: 255 (Time to Live em segundos)
+
+* Em cada roteador é subtratído de -1;
+* No roteador da frente você vai ver:
+
+```text
+TTL: 254
+```
+
+#### PRO: 0x06 (TCP)
+
+#### SRC IP (IP de origem)
+
+```text
+192.168.0.190
+```
+* Esse NÃO muda durante o caminho
+
+#### DST IP (IP de destino)
+
+```text
+192.168.0.2
+```
+* Esse NÃO muda durante o caminho
+
+---
+
+### 3. CAMADA TCP (Camada 4)
+
+#### SOURCE PORT: 80 (Servidor web HTTP)
+
+#### DESTINATION PORT: 1025 (Cliente porta efêmera)
+
+#### SEQUENCE NUMBER: 0 (Primeiro byte da transmissão)
+
+#### ACK NUMBER: 1 (Confirma recebimento)
+
+#### FLAGS: 0b00010100
+
+Traduzindo:
+
+| Flag | Valor | Significado      |
+| ---- | ----- | ---------------- |
+| ACK  | 1     | Confirmação      |
+| RST  | 1     | Reset de conexão |
+
+
+Interpretação:
+
+* Esse pacote está dizendo:
+* “Essa conexão não é válida”
+* “Estou encerrando/resetando a comunicação”
+
+#### WINDOW: 0 (O receptor não quer mais dados)
+
+* Isso reforça o **reset da conexão**
+
+#### CHECKSUM (Verificação de erro)
+
+#### URGENT POINTER (Não usado aqui)
+
+#### OPTIONS (Campos adicionais, não utilizados)
+
+#### PADDING: 0 (Ajuste de tamanho do pacote)
+
+
+## INTERPRETAÇÃO COMPLETA DO PACOTE
+
+Esse pacote representa:
+
+* Um **servidor HTTP (porta 80)**
+* Respondendo a um cliente
+* Mas enviando um **RESET (RST)**
+* e bloqueando o fluxo (WINDOW = 0)
+
+# 🔥 O QUE ISSO SIGNIFICA NA PRÁTICA?
+
+Possíveis causas no seu laboratório:
+
+* Serviço HTTP não está ativo corretamente
+* Porta não está aberta
+* Cliente tentou conexão inválida
+* Simulação iniciou no meio da comunicação
+
+---
+
+# 🎯 INSIGHT DIDÁTICO (ESSENCIAL PRA SUA AULA)
+
+Esse print mostra 3 conceitos-chave:
+
+### 1. ✔ MAC muda a cada salto
+
+### 2. ✔ IP permanece fixo
+
+### 3. ✔ TTL controla o caminho
+
+---
+
+# 💡 FRASE PERFEITA PARA SLIDE
+
+👉 “Roteadores trocam MAC, preservam IP e reduzem TTL”
 
 
 ## (1) Análise do PDU do PING DNS e ICMP
@@ -73,6 +230,8 @@ Colocar um print aqui e explicar todos os campos
 1.9.2) No subcampo IP, qual é o DST IP? Faz sentido a resposta que você está vendo?
 
 1.9.3) **DESAFIO MASTER BLASTER:** descubra a lógica do campo SEQ NUMBER do campo ICMP. Se você conseguir entender está see tornando um ninja em redes.
+
+1.9.4) Qual o valor do sub-campo TL
 
 
 
