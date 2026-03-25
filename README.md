@@ -38,13 +38,33 @@ Colocar um print aqui e explicar todos os campos
 
 1.4) Digite `ping pc2` e [ENTER]
 
-1.5) Minimiza o **Command-Prompt** e clica 1x no botão **avançar** ou **Alt+c** no teclado;
+1.5) Minimiza o **Command-Prompt** e clica 2x no botão **avançar** ou **Alt+c** no teclado até o pacote parar no Roteador 2 (direita);
 
 1.6) Abra esse PDU que saiu do host **Email-Client** clicando no envelope. Vai abrir uma pequena tela **PDU INFORMATION AT DEVICE: xxx**. Que no seu caso, deve ser o **Switch1**;
 
 1.7) Na aba **OSI Model**, responda:
 
-1.7.1) 
+1.7.1) Destination?
+
+1.7.2) Na coluna Out Layers, o que está na CAMADA 7?
+
+1.7.2) Na CAMADA 4, está UDP ou TCP? Qual porta de destino e qual porta de origem? Você enxerga a porta de destino 53? O que isso significa? Faça uma rápida pesquisa.
+
+1.8) Na aba OUTBOUND PDU DETAILS, responda:
+
+1.8.1) Qual é o SRC IP?
+
+1.8.2) Qual é o DST IP?
+
+1.8.3) Olhando para o campo UDP, qual é o SOURCE PORT? Por que?
+
+1.8.4) Ainda no campo UDP, qual é o DESTIONAION PORT? Bate como alguma coisa que você viu nos itens anteriores?
+
+1.8.5) No campo do DNS Query, o que está na varíavel NAME?
+
+1.8.6) No campo DNS Answers, o que está na varíavel NAME?
+
+1.8.7) Ainda no campo DNS Answer, o que está no subcampo IP? Bate com alguma coisa? Justifique.
 
 
 ## Fazer o tráfego da rede para cada protocolo e analisar o PDU
