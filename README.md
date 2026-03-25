@@ -1,8 +1,10 @@
 # Camada de Aplicação II - Aprofundamento
 
 ##Objetivo da aula
-Compreender como os protocolos da camada de aplicação funcionam de forma integrada em uma rede cliente-servidor, analisando como nomes, serviços, autenticação, conteúdo e mensagens trafegam e são entregues ao usuário final. Para isso, hoje vamos abrir as PDUs dos protocolos e aprofundar esta análise.
 
+* Compreender como os protocolos da camada de aplicação funcionam de forma integrada em uma rede cliente-servidor;
+* Analisar nomes, serviços, autenticação, conteúdo e mensagens que trafegam;
+* Analisar e compreender como esses PDUs são entregues ao usuário final.
 
 ## Ao final da aula, vocês devem ser capazes de:
 
@@ -14,11 +16,29 @@ Compreender como os protocolos da camada de aplicação funcionam de forma integ
 
 ## Ponto de Partida
 
-Na camada de aplicação, o usuário não pensa em IP, quadro, segmento ou roteamento. Ele pensa em ações como abrir um site, enviar um e-mail, baixar um arquivo ou procurar um nome. A rede esconde a complexidade e entrega serviços. Estudar a camada de aplicação é estudar como esses serviços são organizados para que a experiência do usuário aconteça.
+* Na camada de aplicação, o usuário não pensa em IP, quadro, segmento ou roteamento;
+* Ele pensa em ações como abrir um site, enviar um e-mail, baixar um arquivo ou procurar um nome;
+* A rede esconde a complexidade e entrega serviços;
+* Estudar a camada de aplicação é estudar como esses serviços são organizados para que a experiência do usuário aconteça.
 
 ## Definição do Datagrama
 
 Colocar um print aqui e explicar todos os campos
+
+
+## (1) Análise do PDU do PING usando NOME (DNS) e não IP
+
+**Objetivo:** Sua missão é abrir o **Commmand-Prompt** do **PC Email-Client**, digitar `ping PC2` e analisar o PDU em todos os saltos até obter o primeiro pacote ping **Reply from 192.168.0.131: bytes=32 time=10ms TTL=126**. Após isso, preencher um relatório respondendo as perguntas;
+
+1.1) Clica no botão **Simulation** para ativar a simulação passo-a-passo;
+1.2) Vá em **Edit Filters** desmarque todas as caixinhas, menos DNS e ICMP ((Internet Control Message Protocol). Este último suporta o comando `ping`;  
+1.3) Clica no host **Email-Client**, abra o seu Command-Prompt;
+1.4) Digite `ping pc2` e [ENTER]
+1.5) Minimiza o **Command-Prompt** e clica 1x no botão **avançar** ou **Alt+c** no teclado;
+1.6) Abra esse PDU que saiu do host **Email-Client** clicando no envelope. Vai abrir uma pequena tela **PDU INFORMATION AT DEVICE: xxx**. Que no seu caso, deve ser o **Switch1**;
+1.7) Na aba **OSI Model**, responda:
+1.7.1) 
+
 
 ## Fazer o tráfego da rede para cada protocolo e analisar o PDU
 
