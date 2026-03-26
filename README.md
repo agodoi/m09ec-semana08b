@@ -177,7 +177,7 @@ Esse pacote representa:
 
 1.7.3) Na CAMADA 4, está UDP ou TCP? Qual porta de destino e qual porta de origem? Você enxerga a porta de destino 53? O que isso significa? Faça uma rápida pesquisa.
 
-1.8) Na aba OUTBOUND PDU DETAILS, responda:
+1.8) Agora, faça o pacote DNS chegar no **Email-Client**. Vá na aba OUTBOUND PDU DETAILS, responda:
 
 1.8.1) Qual é o SRC IP?
 
