@@ -173,7 +173,7 @@ Esse pacote representa:
 
 1.7.1) Destination?
 
-1.7.2) Na coluna Out Layers, o que está na CAMADA 7?
+1.7.2) Volte na simulação e pegue o 1º pacote antes de sair do host **Email-Client**, e veja na coluna Out Layers, o que está na CAMADA 7?
 
 1.7.3) Na CAMADA 4, está UDP ou TCP? Qual porta de destino e qual porta de origem? Você enxerga a porta de destino 53? O que isso significa? Faça uma rápida pesquisa.
 
